@@ -12,6 +12,7 @@ mkdir -p ~/.ssh
 eval `ssh-agent -s`
 ssh-add - <<< "$SSH_PRIVATE_KEY"
 ssh-keyscan $DOKKU_HOST >> ~/.ssh/known_hosts
+ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 # Setup the git environment
 git_repo="$DOKKU_USER@$DOKKU_HOST:$DOKKU_APP_NAME"
